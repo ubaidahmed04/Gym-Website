@@ -1,6 +1,5 @@
 "use client"
 import React from 'react'
-import { Box, Button, TextField, Typography, Paper } from "@mui/material";
 import { ProductCard } from './ProductCard';
 import Team from './team';
 import ProductStore from './ProductStore';

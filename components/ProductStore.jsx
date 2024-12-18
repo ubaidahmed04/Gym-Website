@@ -24,7 +24,7 @@ import React from 'react'
           <div>
             <h3 className="text-lg font-extrabold text-light">{title}</h3>
             <p className="text-gray-200 text-sm mt-2">{description}</p>
-            <h4 className="text-lg text-gray-500 font-bold mt-4">${price}</h4>
+            <h4 className="text-lg text-gray-800 font-bold mt-4">${price}</h4>
           </div>
         </div>
       );

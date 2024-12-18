@@ -117,7 +117,7 @@ export function Appbar() {
     return (
         <Navbar className="sticky top-0 z-9999 h-max max-w-full bg-darkBlue rounded-none border-none px-2 py-2 lg:px-8 lg:py-2">
             <div className="flex items-center justify-between text-light ">
-                <Link href="/">
+                <Link href="/dashboard">
                     <Image
                         height={60}
                         width={60}
