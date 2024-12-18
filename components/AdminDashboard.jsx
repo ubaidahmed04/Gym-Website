@@ -21,11 +21,11 @@ const AdminDashboard = () => {
       </p>
     </div>
         
-      <span className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4'>
-       <ProductStore text={"Daily Exercise"}/>
-       <ProductStore text={"Daily Diet"}/>
-       <ProductStore text={" Sell Items"}/>
-       <ProductStore text={"Sell Supplements"}/>
+      <span className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4'>
+       <ProductCard />
+       <ProductCard />
+       <ProductCard />
+       <ProductCard />
         </span>    
         <Team/>
    
