@@ -22,10 +22,10 @@ const LoginRegister = () => {
         
           <div className="px-26 py-17.5 text-center">
             <h2 className="mb-9 text-2xl font-bold text-black dark:text-white sm:text-title-xl2">
-              SignIn To A.A GYM
+              SignIn To AA GYM
             </h2>
             <p className="2xl:px-20">
-              Please Sign in to access your resources.
+              Please Sign in to access your resources
             </p>
             <span className="mt-15  inline-block">
               <svg
