@@ -196,7 +196,7 @@ const LoginRegister = () => {
                 </Link>
                 </Button>
                 <div className="xl:px-20 mt-5  justify-start flex">
-                Don't have an account?
+                Dont have an account ?
                 <Link href={'/register'} className="text-blue-500 hover:cursor-pointer
                  ">
                     Register
