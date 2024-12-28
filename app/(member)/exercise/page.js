@@ -81,11 +81,11 @@ const GymExercisePage = () => {
         </Tabs>
         <div className="mt-4">
           <Typography variant="h6" color="blue-gray" className="mb-2">
-            {selectedDay}'s Exercises
+            {selectedDay}s Exercises
           </Typography>
           {selectedDay === "Sunday" ? (
             <Typography color="red" variant="h6" className="mb-2">
-              Rest Day - No Exercises for Today
+              Rest Day  No Exercises for Today
             </Typography>
           ) : (
             <table className="w-full table-auto text-left">
