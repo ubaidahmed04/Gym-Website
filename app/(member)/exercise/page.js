@@ -56,7 +56,7 @@ const GymExercisePage = () => {
               Gym Exercise Schedule
             </Typography>
             <Typography color="light-blue" className="mt-1 font-normal">
-              View your daily exercise plan and stay consistent with your routine.
+              View your daily exercise plan and stay consistent with your routine
             </Typography>
           </div>
         </div>
