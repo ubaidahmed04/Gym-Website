@@ -104,7 +104,7 @@ export function Appbar() {
 
             >
                 <Link
-                    href="/login"
+                    href="/"
                     className={`${pathName === '/' ? 'text-orange underline fontbold translate-x-1' : 'text-light'} flex items-center`}
                 >
                     SignIn
@@ -195,9 +195,9 @@ export function Appbar() {
                     >
 
                         {openNav ? (
-                            <RxCross2 className="h-6 w-6" />
+                            <RxCross2 className="h-6 w-6 text-white" />
                         ) : (
-                            <HiMenuAlt1 className="h-6 w-6" />
+                            <HiMenuAlt1  className="h-6 w-6 text-white" />
                         )}
                     </IconButton>
                 </div>

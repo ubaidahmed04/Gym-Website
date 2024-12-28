@@ -48,9 +48,9 @@ export default function Sidebar() {
       <div className="lg:hidden">
         <IconButton variant="text" size="lg" onClick={openDrawer}>
           {isDrawerOpen ? (
-            <FiX className="h-8 w-8" />
+            <FiX className="h-8 w-8 text-white" />
           ) : (
-            <FiMenu className="h-8 w-8" />
+            <FiMenu className="text-white h-8 w-8" />
           )}
         </IconButton>
       </div>
@@ -89,16 +89,17 @@ function SidebarContent({ closeDrawer, openAlert, setOpenAlert, open, handleOpen
     <Card
       color="transparent"
       shadow={false}
-      className="h-[calc(100vh)] sticky top-0  border w-full p-4"
+      className="h-[calc(100vh)] sticky top-0 bg-black text-white  border w-full p-4"
     >
       <div className="mb-2 flex items-center gap-4 p-4">
         <SiOpenaigym  size={30} className="font-bold text-2xl"/>
-        <Typography variant="h5" color="blue-gray">
+        <Typography variant="h5" color="white">
           Ideal
         </Typography>
       </div>
       <div className="p-2">
         <Input
+        className="focus:border-white bg-white"
           icon={<LuSearch className="h-5 w-5" />}
           label="Search"
         />
@@ -117,33 +118,33 @@ function SidebarContent({ closeDrawer, openAlert, setOpenAlert, open, handleOpen
           <ListItem className="p-0" selected={open === 1}>
             <AccordionHeader
               onClick={() => handleOpen(1)}
-              className="border-b-0 p-3"
+              className="border-b-0 p-3 text-white"
             >
               <ListItemPrefix>
-                <FiPieChart className="h-5 w-5" />
+                <FiPieChart className="h-5 w-5 text-white" />
               </ListItemPrefix>
-              <Typography color="blue-gray" className="mr-auto font-normal">
+              <Typography color="white" className="mr-auto font-normal">
                 Dashboard
               </Typography>
             </AccordionHeader>
           </ListItem>
-          <AccordionBody className="py-1">
-            <List className="p-0">
+          <AccordionBody className="py-1 text-white">
+            <List className="p-0 text-white">
               <ListItem>
                 <ListItemPrefix>
-                  <FiChevronRight className="h-3 w-5" />
+                  <FiChevronRight className="h-3 w-5 text-white" />
                 </ListItemPrefix>
                 Members
               </ListItem>
               <ListItem>
                 <ListItemPrefix>
-                  <FiChevronRight className="h-3 w-5" />
+                  <FiChevronRight className="h-3 w-5 text-white" />
                 </ListItemPrefix>
                 Management
               </ListItem>
               <ListItem>
                 <ListItemPrefix>
-                  <FiChevronRight className="h-3 w-5" />
+                  <FiChevronRight className="h-3 w-5 text-white" />
                 </ListItemPrefix>
                 Projects
               </ListItem>
@@ -163,21 +164,21 @@ function SidebarContent({ closeDrawer, openAlert, setOpenAlert, open, handleOpen
           <ListItem className="p-0" selected={open === 2}>
             <AccordionHeader
               onClick={() => handleOpen(2)}
-              className="border-b-0 p-3"
+              className="border-b-0 p-3 text-white"
             >
               <ListItemPrefix>
-                <FiShoppingBag className="h-5 w-5" />
+                <FiShoppingBag className="h-5 w-5 text-white" />
               </ListItemPrefix>
-              <Typography color="blue-gray" className="mr-auto font-normal">
+              <Typography color="white" className="mr-auto font-normal">
                 Store
               </Typography>
             </AccordionHeader>
           </ListItem>
-          <AccordionBody className="py-1">
-            <List className="p-0">
+          <AccordionBody className="py-1 text-white">
+            <List className="p-0 text-white">
               <ListItem>
                 <ListItemPrefix>
-                  <FiChevronRight className="h-3 w-5" />
+                  <FiChevronRight className="h-3 w-5 text-white" />
                 </ListItemPrefix>
                 Orders
               </ListItem>
@@ -193,9 +194,9 @@ function SidebarContent({ closeDrawer, openAlert, setOpenAlert, open, handleOpen
             </List>
           </AccordionBody>
         </Accordion>
-        <hr className="my-2 border-blue-gray-50" />
+        <hr className="my-2 border-white-50" />
        
-        <ListItem>
+        <ListItem className="text-white">
           <ListItemPrefix>
             <FiUser className="h-5 w-5" />
           </ListItemPrefix>
@@ -203,7 +204,7 @@ function SidebarContent({ closeDrawer, openAlert, setOpenAlert, open, handleOpen
         </ListItem>
        
         <Link href={"/"}>
-        <ListItem>
+        <ListItem className="text-white">
           <ListItemPrefix>
             <FiLogOut className="h-5 w-5" />
           </ListItemPrefix>
@@ -211,34 +212,7 @@ function SidebarContent({ closeDrawer, openAlert, setOpenAlert, open, handleOpen
         </ListItem>
         </Link>
       </List>
-      <Alert
-        open={openAlert}
-        className="mt-auto"
-        onClose={() => setOpenAlert(false)}
-      >
-        <FiAlertCircle className="mb-4 h-12 w-12" />
-        <Typography variant="h6" className="mb-1">
-          Upgrade to PRO
-        </Typography>
-        <Typography variant="small" className="font-normal opacity-80">
-          Upgrade to Material Tailwind PRO and get even more components,
-          plugins, advanced features and premium.
-        </Typography>
-        <div className="mt-4 flex gap-3">
-          <Typography
-            as="a"
-            href="#"
-            variant="small"
-            className="font-medium opacity-80"
-            onClick={() => setOpenAlert(false)}
-          >
-            Dismiss
-          </Typography>
-          <Typography as="a" href="#" variant="small" className="font-medium">
-            Upgrade Now
-          </Typography>
-        </div>
-      </Alert>
+      
     </Card>
   );
 }
