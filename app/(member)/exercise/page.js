@@ -19,31 +19,31 @@ const GymExercisePage = () => {
   // Dummy exercise data for each day
   const exerciseSchedule = {
     Monday: [
-      { name: "Bench Press", sets: 4, reps: "12-10-8-6", duration: "40 min" },
+      { name: "Bench Press", sets: 4, reps: "12 10 8 6", duration: "40 min" },
       { name: "Push-Ups", sets: 3, reps: "15", duration: "15 min" },
     ],
     Tuesday: [
-      { name: "Deadlift", sets: 4, reps: "8", duration: "45 min" },
-      { name: "Pull-Ups", sets: 3, reps: "12", duration: "20 min" },
+      // { name: "Deadlift", sets: 4, reps: "8", duration: "45 min" },
+      // { name: "Pull-Ups", sets: 3, reps: "12", duration: "20 min" },
     ],
     Wednesday: [
-      { name: "Squats", sets: 4, reps: "10-8-6", duration: "50 min" },
-      { name: "Lunges", sets: 3, reps: "12", duration: "15 min" },
+      // { name: "Squats", sets: 4, reps: "10-8-6", duration: "50 min" },
+      // { name: "Lunges", sets: 3, reps: "12", duration: "15 min" },
     ],
     Thursday: [
-      { name: "Bicep Curls", sets: 3, reps: "12", duration: "25 min" },
-      { name: "Tricep Dips", sets: 3, reps: "12", duration: "20 min" },
+      // { name: "Bicep Curls", sets: 3, reps: "12", duration: "25 min" },
+      // { name: "Tricep Dips", sets: 3, reps: "12", duration: "20 min" },
     ],
     Friday: [
-      { name: "Shoulder Press", sets: 4, reps: "10", duration: "35 min" },
-      { name: "Lateral Raises", sets: 3, reps: "12", duration: "20 min" },
+      // { name: "Shoulder Press", sets: 4, reps: "10", duration: "35 min" },
+      // { name: "Lateral Raises", sets: 3, reps: "12", duration: "20 min" },
     ],
     Saturday: [
-      { name: "Cardio", sets: "&mdash;", reps: "&mdash;", duration: "30 min" },
-      { name: "Plank", sets: 3, reps: "60 sec", duration: "15 min" },
+      // { name: "Cardio", sets: "&mdash;", reps: "&mdash;", duration: "30 min" },
+      // { name: "Plank", sets: 3, reps: "60 sec", duration: "15 min" },
     ],
     Sunday: [
-      { name: "Rest Day", sets: "&mdash;", reps: "&mdash;", duration: "&mdash;" },
+      // { name: "Rest Day", sets: "&mdash;", reps: "&mdash;", duration: "&mdash;" },
     ],
   };
   
