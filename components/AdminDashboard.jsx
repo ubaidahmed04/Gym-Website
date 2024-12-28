@@ -29,13 +29,13 @@ const AdminDashboard = () => {
          <FeatureCard 
           featureName={"Product-List"}
           description={"Dependable solutions for your business."}
-          url={"/products"}
+          url={"/allProducts"}
           Icon={MdOutlineStorefront}
           />
          <FeatureCard 
           featureName={"All-User"}
           description={"Dependable solutions for your business."}
-          url={"/users"}
+          url={"/allUsers"}
           Icon={LiaUserEditSolid}
           />
          

@@ -92,7 +92,7 @@ function SidebarContent({ closeDrawer, openAlert, setOpenAlert, open, handleOpen
       className="h-[calc(100vh)] sticky top-0 w-full  bg-black text-white  border  p-2"
     >
       <div className="mb-2 flex items-center gap-4 p-4">
-        <Link href={'/admin'} className="flex gap-4 items-center">
+        <Link href={'/dashboard'} className="flex gap-4 items-center">
         <SiOpenaigym  size={30} className="font-bold text-2xl"/>
         <Typography variant="h5" color="white">
           Ideal
@@ -132,24 +132,23 @@ function SidebarContent({ closeDrawer, openAlert, setOpenAlert, open, handleOpen
           </ListItem>
           <AccordionBody className="py-1 text-white">
             <List className="p-0 text-white">
+              <Link href={'/allUsers'}>
               <ListItem>
                 <ListItemPrefix>
                   <FiChevronRight className="h-3 w-5 text-white" />
                 </ListItemPrefix>
                 Members
               </ListItem>
+              </Link>
+              
+              <Link href={'/addSchedule'}>
               <ListItem>
                 <ListItemPrefix>
                   <FiChevronRight className="h-3 w-5 text-white" />
                 </ListItemPrefix>
-                Management
+                Schedule 
               </ListItem>
-              <ListItem>
-                <ListItemPrefix>
-                  <FiChevronRight className="h-3 w-5 text-white" />
-                </ListItemPrefix>
-                Projects
-              </ListItem>
+              </Link>
             </List>
           </AccordionBody>
         </Accordion>
@@ -178,12 +177,14 @@ function SidebarContent({ closeDrawer, openAlert, setOpenAlert, open, handleOpen
           </ListItem>
           <AccordionBody className="py-1 text-white">
             <List className="p-0 text-white">
+              <Link href={'/addProduct'}>
               <ListItem>
                 <ListItemPrefix>
                   <FiChevronRight className="h-3 w-5 text-white" />
                 </ListItemPrefix>
-                Orders
+                Add Product
               </ListItem>
+              </Link>
 
         <Link href={"/allProducts"}>
               <ListItem>
