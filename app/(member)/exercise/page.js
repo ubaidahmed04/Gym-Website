@@ -20,7 +20,7 @@ const GymExercisePage = () => {
   const exerciseSchedule = {
     Monday: [
       { name: "Bench Press", sets: 4, reps: "12 10 8 6", duration: "40 min" },
-      { name: "Push-Ups", sets: 3, reps: "15", duration: "15 min" },
+      { name: "Push Ups", sets: 3, reps: "15", duration: "15 min" },
     ],
     Tuesday: [
       // { name: "Deadlift", sets: 4, reps: "8", duration: "45 min" },
