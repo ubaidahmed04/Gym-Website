@@ -10,7 +10,7 @@ export default function Layout({children}){
       >
         
       <Sidebar/>
-        <main className=" max-w-screen-xl flex items-center justify-center py-16 w-full h-full mx-auto ">
+        <main className=" max-w-screen-xl px-4 py-16 w-full h-full  ">
           {children}
         </main>
        

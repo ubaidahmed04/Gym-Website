@@ -45,7 +45,7 @@ export default function Sidebar() {
   return (
     <>
       {/* Menu Icon for Mobile */}
-      <div className="lg:hidden">
+      <div className="lg:hidden ">
         <IconButton variant="text" size="lg" onClick={openDrawer}>
           {isDrawerOpen ? (
             <FiX className="h-8 w-8 text-white" />
@@ -59,7 +59,7 @@ export default function Sidebar() {
       <Drawer
         open={isDrawerOpen}
         onClose={closeDrawer}
-        className="lg:hidden"
+        className="lg:hidden w-56  sm:w-64 p-0 bg-darkBlue rounded-sm border-none  "
       >
         <SidebarContent
           closeDrawer={closeDrawer}
@@ -71,7 +71,7 @@ export default function Sidebar() {
       </Drawer>
 
       {/* Permanent Sidebar for Large Screens */}
-      <div className="hidden lg:block w-64">
+      <div className="hidden lg:block  w-64  p-0 !bg-none rounded-sm border-no">
         <SidebarContent
           closeDrawer={closeDrawer}
           openAlert={openAlert}
@@ -89,13 +89,15 @@ function SidebarContent({ closeDrawer, openAlert, setOpenAlert, open, handleOpen
     <Card
       color="transparent"
       shadow={false}
-      className="h-[calc(100vh)] sticky top-0 bg-black text-white  border w-full p-4"
+      className="h-[calc(100vh)] sticky top-0 w-full  bg-black text-white  border  p-2"
     >
       <div className="mb-2 flex items-center gap-4 p-4">
+        <Link href={'/admin'} className="flex gap-4 items-center">
         <SiOpenaigym  size={30} className="font-bold text-2xl"/>
         <Typography variant="h5" color="white">
           Ideal
         </Typography>
+        </Link>
       </div>
       <div className="p-2">
         <Input
