@@ -39,13 +39,14 @@ const GymExercisePage = () => {
       { name: "Lateral Raises", sets: 3, reps: "12", duration: "20 min" },
     ],
     Saturday: [
-      { name: "Cardio", sets: "-", reps: "-", duration: "30 min" },
+      { name: "Cardio", sets: "&mdash;", reps: "&mdash;", duration: "30 min" },
       { name: "Plank", sets: 3, reps: "60 sec", duration: "15 min" },
     ],
     Sunday: [
-      { name: "Rest Day", sets: "-", reps: "-", duration: "-" },
+      { name: "Rest Day", sets: "&mdash;", reps: "&mdash;", duration: "&mdash;" },
     ],
   };
+  
 
   return (
     <Card className="h-full w-full bg-darkBlue text-white my-4 py-4 ">
