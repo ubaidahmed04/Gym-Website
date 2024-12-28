@@ -10,7 +10,7 @@ export default function RootLayout({ children }) {
       <body
         className={`antialiased`}
       >
-        <section className="myfont flex flex-col min-h-screen max-h-full justify-center items-center" >
+        <section className="myfont flex flex-col bg-black min-h-screen max-h-full justify-center items-center" >
            
             <main className="flex-grow max-w-screen-xl w-full flex flex-col justify-center items-center mx-auto">
               {children}

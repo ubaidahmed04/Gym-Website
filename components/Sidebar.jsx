@@ -31,6 +31,7 @@ import {
   Drawer,
   Alert,
 } from "@material-tailwind/react";
+import Link from "next/link";
 
 export default function Sidebar() {
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
@@ -88,7 +89,7 @@ function SidebarContent({ closeDrawer, openAlert, setOpenAlert, open, handleOpen
     <Card
       color="transparent"
       shadow={false}
-      className="h-[calc(100vh-2rem)] border w-full p-4"
+      className="h-[calc(100vh)] sticky top-0  border w-full p-4"
     >
       <div className="mb-2 flex items-center gap-4 p-4">
         <SiOpenaigym  size={30} className="font-bold text-2xl"/>
@@ -180,49 +181,35 @@ function SidebarContent({ closeDrawer, openAlert, setOpenAlert, open, handleOpen
                 </ListItemPrefix>
                 Orders
               </ListItem>
+
+        <Link href={"/allProducts"}>
               <ListItem>
                 <ListItemPrefix>
                   <FiChevronRight className="h-3 w-5" />
                 </ListItemPrefix>
                 Products
               </ListItem>
+        </Link>
             </List>
           </AccordionBody>
         </Accordion>
         <hr className="my-2 border-blue-gray-50" />
-        {/* <ListItem>
-          <ListItemPrefix>
-            <FiInbox className="h-5 w-5" />
-          </ListItemPrefix>
-          Inbox
-          <ListItemSuffix>
-            <Chip
-              value="14"
-              size="sm"
-              variant="ghost"
-              color="blue-gray"
-              className="rounded-full"
-            />
-          </ListItemSuffix>
-        </ListItem> */}
+       
         <ListItem>
           <ListItemPrefix>
             <FiUser className="h-5 w-5" />
           </ListItemPrefix>
           Profile
         </ListItem>
-        <ListItem>
-          <ListItemPrefix>
-            <FiSettings className="h-5 w-5" />
-          </ListItemPrefix>
-          Settings
-        </ListItem>
+       
+        <Link href={"/"}>
         <ListItem>
           <ListItemPrefix>
             <FiLogOut className="h-5 w-5" />
           </ListItemPrefix>
           Log Out
         </ListItem>
+        </Link>
       </List>
       <Alert
         open={openAlert}

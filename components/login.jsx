@@ -15,16 +15,16 @@ const LoginRegister = () => {
         }
   return (
     <Suspense>
-    <div className="rounded-3xl border border-stroke w-full h-[80vh]   bg-[#e6e8eb] flex items-center justify-center shadow-lg shadow-gray-500">
+    <div className="rounded-3xl  w-full h-[80vh]   bg-darkBlue flex items-center justify-center shadow-lg shadow-gray-500">
       <div
       className="flex flex-wrap items-center justify-center w-full h-full ">
         <div className="hidden w-full xl:block xl:w-1/2">
         
           <div className="px-26 py-17.5 text-center">
-            <h2 className="mb-9 text-2xl font-bold text-black dark:text-white sm:text-title-xl2">
+            <h2 className="mb-9 text-2xl font-bold text-white sm:text-title-xl2">
               SignIn To AA GYM
             </h2>
-            <p className="2xl:px-20">
+            <p className="2xl:px-20 text-white">
               Please Sign in to access your resources
             </p>
             <span className="mt-15  inline-block">
@@ -152,9 +152,9 @@ const LoginRegister = () => {
           </div>
         </div>
 
-        <div className="w-full flex items-center flex-col gap-8 rounded-r-lg border-stroke bg-slate-300 dark:border-strokedark xl:w-1/2 xl:border-l-2">
+        <div className="w-full flex items-center flex-col gap-8 rounded-r-lg border-stroke bg-slate-300 border-strokedark xl:w-1/2 xl:border-l-2">
        
-        <h2 className="mb-9 text-2xl font-bold text-black dark:text-white sm:text-title-xl2">
+        <h2 className="mb-9 text-2xl font-bold text-white sm:text-title-xl2">
               Sign In to Portal
             </h2>
           <Formik
@@ -169,7 +169,7 @@ const LoginRegister = () => {
                     name="email"
                     type="email"
                     placeholder="Email"
-                    className={`block w-full p-2 border-b-2 ${errors.email && touched.email ? 'border-red-500' : 'border-gray-300'}`}
+                    className={`block w-full p-2 placeholder:text-black border-b-2 ${errors.email && touched.email ? 'border-red-500' : 'border-gray-300'}`}
                   />
                   <ErrorMessage name="email" component="div" className="text-red-500 text-sm mt-1" />
                 </div>
@@ -179,7 +179,7 @@ const LoginRegister = () => {
                     name="password"
                     type={showPassword ? "text" : "password"}
                     placeholder="Password"
-                    className={`block w-full p-2 border-b-2 ${errors.password && touched.password ? 'border-red-500' : 'border-gray-300'}`}
+                    className={`block w-full p-2 placeholder:text-black border-b-2 ${errors.password && touched.password ? 'border-red-500' : 'border-gray-300'}`}
                   />
                   <span
                     className="absolute right-2 top-3 cursor-pointer"
@@ -190,14 +190,14 @@ const LoginRegister = () => {
                   <ErrorMessage name="password" component="div" className="text-red-500  text-sm mt-1" />
                 </div>
                 <div>
+                <Link href={'/members'} >
                 <Button  className="w-full text-white bg-orange">
-                <Link href={'/dashboard'} >
                    Sign In
-                </Link>
                 </Button>
-                <div className="xl:px-20 mt-5  justify-start flex">
-                Dont have an account ?
-                <Link href={'/register'} className="text-blue-500 hover:cursor-pointer
+                </Link>
+                <div className="xl:px-20 mt-5  text-white justify-start flex">
+                Dont have an account 
+                <Link href={'/register'} className="text-blue-500 ml-2 hover:underline hover:cursor-pointer
                  ">
                     Register
                 </Link>

@@ -13,16 +13,16 @@ const RegisterForm = () => {
   
   return (
        <Suspense >
-      <div className="rounded-3xl border border-stroke w-full h-[80vh]   bg-[#e6e8eb] flex items-center justify-center shadow-lg shadow-gray-500">
+      <div className="rounded-3xl  w-full h-[80vh]   bg-darkBlue flex items-center justify-center shadow-lg shadow-gray-500">
         <div 
         className="flex flex-wrap items-center justify-center w-full h-full ">
           <div className="hidden w-full xl:block xl:w-1/2">
             <div className="px-26 py-17.5 text-center">
-              <h2 className="mb-9 text-2xl font-bold text-black dark:text-white sm:text-title-xl2">
+              <h2 className="mb-9 text-2xl font-bold text-white sm:text-title-xl2">
                 Register To  AA GYM
 
               </h2>
-              <p className="2xl:px-20">
+              <p className="2xl:px-20 text-white">
                 Please Sign Up to access your resources
               </p>
 
@@ -155,52 +155,54 @@ const RegisterForm = () => {
           <div className="w-full flex items-center flex-col gap-8 rounded-r-lg border-stroke bg-slate-300 dark:border-strokedark xl:w-1/2 xl:border-l-2">
             <div className="w-full p-4 sm:p-12.5 xl:p-17.5">
 
-              <h2 className="mb-9 text-2xl font-bold text-black dark:text-white sm:text-title-xl2">
+              <h2 className="mb-9 text-2xl font-bold text-white sm:text-title-xl2">
                 Sign Up to Portal
               </h2>
 
               <div className="mb-4">
-                <label className="mb-2.5 block font-medium text-black dark:text-white">
+                <label className="mb-2.5 block font-medium focus:text-darkgray text-white">
                   UserName
                 </label>
                 <div className="w-full">
-                  <Input label="Enter Your Name" icon={<FaRegUser/>} />
+                  <Input className="focus:border-white bg-white" label="Enter Your Name" icon={<FaRegUser/>} />
                 </div>
                 
               </div>
               <div className="mb-4">
-                <label className="mb-2.5 block font-medium text-black dark:text-white">
+                <label className="mb-2.5 block font-medium focus:text-darkgray text-white">
                   Email
                 </label>
                 <div className="w-full">
-                  <Input label="Enter Your Email" icon={<MdOutlineMail/>} />
+                  <Input className="focus:border-white bg-white" label="Enter Your Email" icon={<MdOutlineMail/>} />
                 </div>
                 
               </div>
               <div className="mb-4">
-                <label className="mb-2.5 block font-medium text-black dark:text-white">
+                <label className="mb-2.5 block font-medium focus:text-darkgray text-white">
                   Password
                 </label>
                 <div className="w-full">
-                  <Input type={showPassword ? "text" : "password"} label="Enter Your Email" icon={showPassword ? <BiShow  onClick={tooglePassword} /> : <BiHide  onClick={tooglePassword}  />}  />
+                  <Input className="focus:border-white bg-white" type={showPassword ? "text" : "password"} label="Enter Your password" icon={showPassword ? <BiShow  className="hover:cursor-pointer" onClick={tooglePassword} /> : <BiHide className="hover:cursor-pointer" onClick={tooglePassword}  />}  />
                 </div>
                
               </div>
 
 
               <div className="mb-5">
+                <Link href={'/dashboard'} >
                 <Button
                 variant="outlined"
                   type="submit"
                   className="w-full cursor-pointer rounded-lg border border-primary bg-primary p-4 text-white bg-orange transition hover:bg-opacity-90"
                 >
-                  Register
+                   Register
                 </Button>
+                </Link>
               </div>
               
-                <p className="2xl:px-20">
+                <p className="2xl:px-20 text-white">
                 Already have an account to
-                <Link href={'/login'}>
+                <Link href={'/'}>
                  <span className="text-blue-500 hover:cursor-pointer pl-3 hover:underline
                  ">Login</span>
                  </Link>

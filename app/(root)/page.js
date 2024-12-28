@@ -1,10 +1,12 @@
-import RootSec from '@/components/RootSec'
+import LoginRegister from '@/components/login'
 import React from 'react'
 
-const Home  = () => {
+const Login = () => {
   return (
-    <><RootSec/> </>
+    <>
+    <LoginRegister/>
+    </>
   )
 }
 
-export default Home 
+export default Login
