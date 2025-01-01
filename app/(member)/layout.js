@@ -1,6 +1,7 @@
 import "../globals.css";
 import Footer from "@/components/Footer";
 import { Appbar } from "@/components/Header";
+import { Providers } from "@/app/Redux/Provider";
 
 
 
@@ -16,11 +17,13 @@ export default function RootLayout({ children }) {
         className={`antialiased`}
       >
         <section className="myfont flex flex-col min-h-screen max-h-full bg-black" >
-            <Appbar/>
+        <Providers>
+            < Appbar />
             <main className="flex-grow max-w-screen-xl w-full flex flex-col mx-auto">
               {children}
             </main>
             <Footer />
+          </Providers>
         </section>
 
       </body>
