@@ -198,13 +198,14 @@ function SidebarContent({ closeDrawer, openAlert, setOpenAlert, open, handleOpen
           </AccordionBody>
         </Accordion>
         <hr className="my-2 border-white-50" />
-       
+       <Link href={'/registerMember'}>
         <ListItem className="text-white">
           <ListItemPrefix>
             <FiUser className="h-5 w-5" />
           </ListItemPrefix>
-          Profile
+          Member Register
         </ListItem>
+        </Link>
        
         <Link href={"/"}>
         <ListItem className="text-white">
