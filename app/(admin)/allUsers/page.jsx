@@ -103,7 +103,7 @@ const AllUsersPage = () => {
     // Fetch user data from API
     const URL = "https://gym-backend-mocha.vercel.app/api/members"
     axios
-      .get(URL) // Replace with your actual API endpoint
+      .get(URL, { withCredentials: true })
       .then((response) => {
         console.log(response)
         setAllUsers(response.data); // Assuming response.data contains user data

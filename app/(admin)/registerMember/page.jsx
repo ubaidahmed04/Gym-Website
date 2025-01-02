@@ -33,6 +33,7 @@ const RegisterForm = () => {
               'Content-Type': 'application/json',
             },
             body: JSON.stringify(values), 
+            withCredentials: true 
           });
   
           const data = await response.json();
