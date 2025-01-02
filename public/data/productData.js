@@ -1,6 +1,4 @@
-import img1 from '@/public/Images/gym.webp'
-import img2 from '@/public/Images/gym2.webp'
-import img3 from '@/public/Images/gym3.jpeg'
+
 export const products = [
   {
     title: "Dumbbells Set",
