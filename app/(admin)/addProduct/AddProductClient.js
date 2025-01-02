@@ -30,7 +30,7 @@ export function AddProductClient() {
   const [fileName, setFileNames] = useState([]);
   const dispatch = useDispatch()
   const initialValues = {
-    productname: "",
+    name: "",
     description: "",
     brand: "",
     price: "",
@@ -38,36 +38,25 @@ export function AddProductClient() {
     quantity: "",
   };
   const validationSchema = Yup.object({
-    productname: Yup.string()
+    name: Yup.string()
       .required("Product name is required")
       .min(3, "Product name must be at least 3 characters"),
     description: Yup.string()
       .required("Description is required")
       .min(10, "Description must be at least 10 characters"),
-    brand: Yup.string()
-      .required("Brand is required")
-      .min(2, "Brand must be at least 2 characters"),
+    
     price: Yup.number()
       .required("Price is required")
       .positive("Price must be a positive number")
       .min(1, "Price must be at least 1"),
-    category: Yup.string()
-      .required("Category is required"),
-    quantity: Yup.number()
-      .required("Quantity is required")
-      .positive("Quantity must be a positive number")
-      .integer("Quantity must be a whole number")
-      .min(1, "Quantity must be at least 1"),
+   
   });
   const handleSubmit = async (values, { resetForm }) => {
     const route = '/product/add'
     const data = new FormData()
-    data.append("productname", values.productname)
+    data.append("name", values.name)
     data.append("description", values.description)
-    data.append("brand", values.brand)
     data.append("price", values.price)
-    data.append("category", values.category)
-    data.append("quantity", values.quantity)
     // data.append("file", refFile.current.files[0]);
     const files = refFile.current.files;
     for (let i = 0; i < files.length; i++) {
@@ -194,8 +183,8 @@ export function AddProductClient() {
             </div>
             <span>
 
-              <FieldInput type="text" name='productname' placeholder="Enter Your Product Name" />
-              <ErrorMessage name="productname" component="div" className="text-red-500 text-sm mt-1" />
+              <FieldInput type="text" name='name' placeholder="Enter Your Product Name" />
+              <ErrorMessage name="name" component="div" className="text-red-500 text-sm mt-1" />
             </span>
 
             <span>
@@ -205,25 +194,25 @@ export function AddProductClient() {
 
             <span className="grid grid-cols-1 md:grid-cols-2 gap-2">
 
-              <span>
+              {/* <span>
                 <FieldInput type="text" name='brand' placeholder="Enter Your Brand Name" label="Brand" />
                 <ErrorMessage name="brand" component="div" className="text-red-500 text-sm mt-1" />
-              </span>
+              </span> */}
 
               <span>
                 <FieldInput type="number" name='price' placeholder="Enter Your Product Price" label="Price" />
                 <ErrorMessage name="price" component="div" className="text-red-500 text-sm mt-1" />
               </span>
 
-              <span>
+              {/* <span>
                 <FieldInput type="select" name='category' placeholder="Category" label="Category" />
                 <ErrorMessage name="category" component="div" className="text-red-500 text-sm mt-1" />
-              </span>
+              </span> */}
 
-              <span>
+              {/* <span>
                 <FieldInput type="number" name='quantity' placeholder="Product Quantity" label="Quantity" />
                 <ErrorMessage name="quantity" component="div" className="text-red-500 text-sm mt-1" />
-              </span>
+              </span> */}
             </span>
 
             <span className="grid grid-cols-2 gap-2 py-4 ">

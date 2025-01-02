@@ -101,7 +101,7 @@ const AllUsersPage = () => {
   };
   useEffect(() => {
     // Fetch user data from API
-    const URL = "http://localhost:4000/api/members"
+    const URL = "https://gym-backend-mocha.vercel.app/api/members"
     axios
       .get(URL) // Replace with your actual API endpoint
       .then((response) => {

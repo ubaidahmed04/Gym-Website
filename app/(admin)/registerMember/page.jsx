@@ -26,7 +26,7 @@ const RegisterForm = () => {
     }),
     onSubmit: async (values) => {
         try {
-            const URL = "http://localhost:4000"
+            const URL = "https://gym-backend-mocha.vercel.app"
           const response = await fetch(`${URL}/api/members`, {
             method: 'POST',
             headers: {
