@@ -101,10 +101,10 @@ const AllUsersPage = () => {
   };
   useEffect(() => {
     // Fetch user data from API
-    // const URL = "https://gym-backend-mocha.vercel.app/api/members"
-    const URL = "https://localhost:4000/api/members"
+    const URL = "https://gym-backend-mocha.vercel.app/api/members"
+    // const URL = "http://localhost:4000/api/members"
     axios
-      .get(URL, { withCredentials: true })
+      .get(URL, )
       .then((response) => {
         console.log(response)
         setAllUsers(response.data); // Assuming response.data contains user data
