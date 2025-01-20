@@ -14,7 +14,7 @@ const AdminDashboard = () => {
     
     {/* <h1 className='flex w-full text-center justify-center py-5 text-xl font-bold'>Member Information</h1> */}
     
-    <div className="text-center max-w-2xl mx-auto">
+    <div className="text-center max-w-2xl ">
       <h2 className=" sm:text-3xl text-2xl font-extrabold text-blue-gray-50">
         Admin Dashboard
       </h2>

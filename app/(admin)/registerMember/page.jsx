@@ -10,7 +10,6 @@ const RegisterForm = () => {
   const formik = useFormik({
     initialValues: {
       username: '',
-      contact: '',
       phoneNo: '',
       email: '',
       dailyExercise: '',
@@ -18,13 +17,12 @@ const RegisterForm = () => {
     },
     validationSchema: Yup.object({
       username: Yup.string().required('Username is required'),
-      contact: Yup.string().required('Contact is required'),
       phoneNo: Yup.string().required('Phone number is required'),
       email: Yup.string().email('Invalid email format').required('Email is required'),
       dailyExercise: Yup.string().required('Daily exercise is required'),
       dailyDiet: Yup.string().required('Daily diet is required'),
     }),
-    onSubmit: async (values) => {
+    onSubmit: async (values,{resetForm}) => {
         try {
             const URL = "https://gym-backend-mocha.vercel.app"
           const response = await fetch(`${URL}/api/members`, {
@@ -53,7 +51,7 @@ const RegisterForm = () => {
   });
 
   return (
-    <div className="max-w-2xl mx-auto p-6 bg-white rounded-lg shadow-md">
+    <div className="w-full max-w-1/2 p-6 bg-white rounded-lg shadow-md">
       <h2 className="text-2xl font-semibold text-center mb-6">Register</h2>
       <form onSubmit={formik.handleSubmit}>
         {/* Username */}
@@ -71,7 +69,7 @@ const RegisterForm = () => {
         </div>
 
         {/* Contact */}
-        <div className="mb-4">
+        {/* <div className="mb-4">
           <Input
             
             label="Contact"
@@ -82,7 +80,7 @@ const RegisterForm = () => {
             error={formik.touched.contact && Boolean(formik.errors.contact)}
             helperText={formik.touched.contact && formik.errors.contact}
           />
-        </div>
+        </div> */}
 
         {/* Phone Number */}
         <div className="mb-4">
