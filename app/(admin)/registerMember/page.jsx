@@ -4,7 +4,7 @@ import { useFormik } from 'formik';
 import * as Yup from 'yup';
 import { Input, Button } from '@material-tailwind/react';
 import { errorNotify, successNotify } from '@/components/toast';
-
+import { ToastContainer } from 'react-toastify';
 const RegisterForm = () => {
   // Formik setup
   const formik = useFormik({
@@ -33,12 +33,12 @@ const RegisterForm = () => {
             body: JSON.stringify(values), 
             withCredentials: true 
           });
-  
+          console.log(response)
           const data = await response.json();
-  
+          console.log(data)
           if (response.ok) {
-            resetForm();
             successNotify(data.message || 'Member registered successfully');
+            resetForm();
           } else {
             
             errorNotify(data.message || 'Registration failed');
@@ -150,6 +150,7 @@ const RegisterForm = () => {
           </Button>
         </div>
       </form>
+      <ToastContainer/>
     </div>
   );
 };
