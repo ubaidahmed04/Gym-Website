@@ -103,6 +103,7 @@ const AllUsersPage = () => {
     // Fetch user data from API
     const URL = "https://gym-backend-mocha.vercel.app/api/members"
     // const URL = "http://localhost:4000/api/members"
+    setIsLoader(true)
     axios
       .get(URL, )
       .then((response) => {
@@ -145,17 +146,21 @@ const AllUsersPage = () => {
               </tr>
             </thead>
             <tbody>
-              {isLoader ? (
-                Array(5).fill(0).map((_, index) => (
-                  <tr key={index}>
-                    {TABLE_HEAD.map((_, colIndex) => (
-                      <td key={colIndex} className="p-4 border-b border-blue-gray-50 animate-pulse">
-                        <div className="h-4 bg-blue-gray-100 rounded w-full"></div>
-                      </td>
-                    ))}
-                  </tr>
-                ))
-              ) : (
+              {isLoader
+                ? Array(10)
+                    .fill(0)
+                    .map((_, index) => (
+                      <tr key={index}>
+                        {TABLE_HEAD.map((_, colIndex) => (
+                          <td
+                            key={colIndex}
+                            className="p-4 border-b border-blue-gray-50 animate-pulse"
+                          >
+                            <div className="h-4 bg-blue-gray-100 rounded w-full"></div>
+                          </td>
+                        ))}
+                      </tr>
+                    )) : (
                 allUsers.map((user, index) => {
                   const isLast = index === allUsers.length - 1;
                   const classes = isLast ? "p-2" : "p-4 border-b border-blue-gray-50";

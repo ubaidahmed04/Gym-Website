@@ -1,8 +1,8 @@
 "use client"
-import { products } from '@/public/data/productData'
 import React, { useEffect, useState } from 'react'
 import ProductCard from './ProductStore'
 import { getAllProducts } from '@/app/API/response'
+import { ProductSkeleton } from './LoaderProduct'
 
 const ProductSection = () => {
    const [allProducts, setAllProducts] = useState([]);
@@ -11,6 +11,7 @@ const ProductSection = () => {
   useEffect(() => {
       const fetchProducts = async () => {
         try {
+          setIsLoader(true)
           const response = await getAllProducts("/newProduct");
           console.log("response",response)
           // if (!response.ok) {
@@ -18,6 +19,7 @@ const ProductSection = () => {
           // }
           // const data = await response.json();
           setAllProducts(response || []); // Assuming the response has a `products` field
+          setIsLoader(false)
         } catch (error) {
           console.error("Error fetching products: " + error.message);
         } finally {
@@ -29,7 +31,9 @@ const ProductSection = () => {
     }, []);
   return (
     <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 max-xl:gap-4 gap-6 py-5">
-  {allProducts.map((product, index) => (
+  {
+  isLoader ? <ProductSkeleton/>:
+  allProducts.map((product, index) => (
     <ProductCard key={index} {...product} />
   ))}
 </div>

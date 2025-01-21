@@ -18,7 +18,7 @@ const AdminDashboard = () => {
       <h2 className=" sm:text-3xl text-2xl font-extrabold text-blue-gray-50">
         Admin Dashboard
       </h2>
-      <p className="text-sm text-darkBlue mt-6 leading-relaxed">
+      <p className="text-sm text-gray-300 mt-6 leading-relaxed">
         Unlock a world of possibilities with our exclusive features. Explore how
         our unique offerings can transform your journey and empower you to achieve
         more.
