@@ -1,5 +1,6 @@
 import axios from "axios";
-const URL = "http://localhost:3000";
+const URL = "https://gym-backend-mocha.vercel.app/api";
+// const URL = "http://localhost:4000/api";
 
 
 export const AddProduct = async (route, data) => {
@@ -7,8 +8,8 @@ export const AddProduct = async (route, data) => {
     url: URL + route,
     method: "POST",
     headers: {
-      "Content-Type": "multipart/form-data",
-      withCredentials: true,
+      "Content-Type": "application/json",
+      // withCredentials: true,
     },
     data: data,
   };

@@ -50,10 +50,10 @@ const Product = () => {
     getAllProduct()
   },[ limit, skip, category])
 // get all  category 
-const { getCategory } = useSelector((state) => state.category);
-console.log("getCategory",getCategory)
+// const { getCategory } = useSelector((state) => state.category);
+// console.log("getCategory",getCategory)
 const GetCategory = async () => {
-  const route = '/category'  
+  const route = '/newProduct'  
   try {
     const response = await getAllProducts(route)
     // console.log("response--->>>>", response.data)

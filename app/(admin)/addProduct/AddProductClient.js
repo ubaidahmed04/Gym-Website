@@ -50,28 +50,32 @@ export function AddProductClient() {
       .positive("Price must be a positive number")
       .min(1, "Price must be at least 1"),
    
+      quantity: Yup.number()
+      .required("quantity is required")
+      .positive("quantity must be a positive number")
+      .min(1, "quantity must be at least 1"),
+   
   });
   const handleSubmit = async (values, { resetForm }) => {
-    const route = '/product/add'
+    const route = '/newProduct'
     const data = new FormData()
-    data.append("name", values.name)
+    data.append("productName", values.name)
     data.append("description", values.description)
     data.append("price", values.price)
-    // data.append("file", refFile.current.files[0]);
-    const files = refFile.current.files;
-    for (let i = 0; i < files.length; i++) {
-      data.append("file", files[i]); // "file" is the key name for multiple files
-    }
+    data.append("quantity",values.quantity);
+   
     try {
       
       const response = await AddProduct(route, data)
       console.log("response--->>>>", response)
-      if(response.status){
+      // successNotify(Product Added)
+
+      if(response){
         successNotify(response.message)
-        setFileNames([])
+        // setFileNames([])
         resetForm()
       }else{
-        errorNotify(response.message)
+        // errorNotify(response.message)
 
       }
     } catch (error) {
@@ -141,7 +145,7 @@ export function AddProductClient() {
           <Form
             className="flex flex-col gap-4 "
           >
-            <div className="max-w-md mx-auto rounded-lg overflow-hidden md:max-w-xl">
+            {/* <div className="max-w-md mx-auto rounded-lg overflow-hidden md:max-w-xl">
               <div className="md:flex">
                 <div className="w-full p-3">
                   <div
@@ -180,7 +184,7 @@ export function AddProductClient() {
                   </div>
                 </div>
               </div>
-            </div>
+            </div> */}
             <span>
 
               <FieldInput type="text" name='name' placeholder="Enter Your Product Name" />
@@ -209,10 +213,10 @@ export function AddProductClient() {
                 <ErrorMessage name="category" component="div" className="text-red-500 text-sm mt-1" />
               </span> */}
 
-              {/* <span>
+              <span>
                 <FieldInput type="number" name='quantity' placeholder="Product Quantity" label="Quantity" />
                 <ErrorMessage name="quantity" component="div" className="text-red-500 text-sm mt-1" />
-              </span> */}
+              </span>
             </span>
 
             <span className="grid grid-cols-2 gap-2 py-4 ">

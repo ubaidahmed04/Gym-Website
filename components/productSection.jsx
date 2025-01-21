@@ -1,11 +1,35 @@
+"use client"
 import { products } from '@/public/data/productData'
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import ProductCard from './ProductStore'
+import { getAllProducts } from '@/app/API/response'
 
 const ProductSection = () => {
+   const [allProducts, setAllProducts] = useState([]);
+    const [isLoader, setIsLoader] = useState(true);
+  
+  useEffect(() => {
+      const fetchProducts = async () => {
+        try {
+          const response = await getAllProducts("/newProduct");
+          console.log("response",response)
+          // if (!response.ok) {
+          //   throw new Error("Failed to fetch products");
+          // }
+          // const data = await response.json();
+          setAllProducts(response || []); // Assuming the response has a `products` field
+        } catch (error) {
+          console.error("Error fetching products: " + error.message);
+        } finally {
+          setIsLoader(false);
+        }
+      };
+  
+      fetchProducts();
+    }, []);
   return (
     <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 max-xl:gap-4 gap-6 py-5">
-  {products.map((product, index) => (
+  {allProducts.map((product, index) => (
     <ProductCard key={index} {...product} />
   ))}
 </div>
