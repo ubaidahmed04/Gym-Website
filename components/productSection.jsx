@@ -14,10 +14,7 @@ const ProductSection = () => {
           setIsLoader(true)
           const response = await getAllProducts("/newProduct");
           console.log("response",response)
-          // if (!response.ok) {
-          //   throw new Error("Failed to fetch products");
-          // }
-          // const data = await response.json();
+          
           setAllProducts(response || []); // Assuming the response has a `products` field
           setIsLoader(false)
         } catch (error) {
@@ -30,13 +27,17 @@ const ProductSection = () => {
       fetchProducts();
     }, []);
   return (
-    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 max-xl:gap-4 gap-6 py-5">
-  {
-  isLoader ? <ProductSkeleton/>:
-  allProducts.map((product, index) => (
-    <ProductCard key={index} {...product} />
-  ))}
-</div>
+    <>
+    {
+      isLoader ? <ProductSkeleton/>:
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 max-xl:gap-4 gap-6 py-5">
+     { allProducts.map((product, index) => (
+        <ProductCard key={index} {...product} />
+      ))}
+    </div>
+    }
+    </>
+
   )
 }
 
